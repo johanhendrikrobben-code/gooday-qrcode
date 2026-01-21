@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Get Gooday</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Prevent caching -->
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+</head>
+<body>
+<script>
+(function() {
+  var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Android → Play Store
+  if (/android/i.test(ua)) {
+    window.location.replace("https://play.google.com/store/apps/details?id=com.gooday.main&hl=en");
+    return;
+  }
+
+  // iOS → App Store
+  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+    window.location.replace("https://apps.apple.com/au/app/gooday-plan-with-friends/id6702014579");
+    return;
+  }
+
+  // Desktop / other → Website
+  window.location.replace("https://www.gooday.com.au");
+})();
+</script>
+</body>
+</html>
